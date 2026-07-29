@@ -1,47 +1,62 @@
-<h1 align="center">Invoicing Software</h1>
+<h1 align="center">Invoice-Software-MERN</h1>
 
 ## 🎯 About
 
-I have started this project 1 year ago with the purpose of learning how to structure a full stack application with React and Expressjs<br/>
-
-For lack of clear concept i paused it after implementing some features. In the next few months i have tried to clear my basic concepts. Now it will be a great time to start the project again and try to implement what i have learned in past few months. <br/>
-
-I will update and push the codes regularly. Hope it will be a greate journey<br/>
+A full-stack web application built to manage clients, create and track invoices, record payments, and generate PDFs. This project leverages the MERN stack (MongoDB, Express, React, Node.js) to deliver a robust business solution for invoicing and customer management.
 
 ## :rocket: Technologies
 
-**Front End:**
+**Frontend:**
+- [React](https://reactjs.org/) (v17)
+- [React Router](https://reactrouter.com/) (v5)
+- [Redux](https://redux.js.org/) & Redux Thunk for state management
+- [Material UI](https://v4.mui.com/) & [Ant Design](https://ant.design/) for UI components
+- `@react-pdf/renderer`, `jspdf`, `html2canvas` for PDF generation
 
-- [React](https://reactjs.org/)
-- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
-- [React Router](https://reactrouter.com/web/guides/quick-start)
-- [Redux](https://redux.js.org/)
-- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
-- [Material UI](https://v4.mui.com/) - I will replace it with Tailwindcss
+**Backend:**
+- [Node.js](https://nodejs.org/) & [Express](https://expressjs.com/)
+- JWT (JSON Web Tokens) for authentication
 
-**Backend**
-
-- [Express](https://expressjs.com/)
-
-**Database**
-
-- [Mongodb](https://www.mongodb.com/)
-- [Mongoose](https://mongoosejs.com/)
-
+**Database:**
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose](https://mongoosejs.com/) for ODM
 
 ## :sparkles: Features
 
-:heavy_check_mark: &nbsp;&nbsp;Sign Up and Sign In<br/>
-:heavy_check_mark: &nbsp;&nbsp;Create Invoice and Estimation<br />
-:heavy_check_mark: &nbsp;&nbsp;Save Invoice copy in PDF and print<br />
+- **Authentication**: Secure JWT-based Sign Up and Sign In.
+- **Client Management**: Add and track customers.
+- **Invoice Tracking**: Create, view, update, and manage invoices with automatic due calculations.
+- **Payment Processing**: Record partial or full payments via Cash or bKash.
+- **PDF Generation**: Generate and download professional invoice PDFs.
+- **Dashboard**: Track overall metrics and summaries.
 
-## 📸 Screenshots
+## 🛠 Setup & Installation
 
-**Sign In**
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/haid3r-ish/InvoiceErp.git
+   cd InvoiceErp
+   ```
 
+2. **Backend Setup:**
+   ```bash
+   cd server
+   npm install
+   # Create a .env file with your MONGO_URI and JWT_SECRET based on .env.sample
+   npm start
+   ```
 
-**Sign Up**
+3. **Frontend Setup:**
+   ```bash
+   cd client
+   npm install
+   npm start
+   ```
 
+## 🧪 Testing Scope (QA)
 
-
-
+The application has a mapped QA surface area designed for End-to-End automation testing via Playwright:
+- Core E2E Invoice Lifecycle (Client -> Invoice -> Payment)
+- Mathematical parity testing for Mongoose pre-save hooks vs UI calculations
+- PDF export validation
+- Data integrity for orphaned records
