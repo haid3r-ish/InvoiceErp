@@ -1,4 +1,5 @@
 # dependencies
+node_modules/
 /node_modules
 /.pnp
 .pnp.js
@@ -31,3 +32,8 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Playwright
+e2e/storageState.json
+e2e/playwright-report/
+e2e/test-results/
